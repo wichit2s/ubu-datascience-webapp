@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.core import serializers
+from django.http import JsonResponse
 
 from .models import Species, Feature
 
@@ -40,3 +42,11 @@ def index(req):
         'petal_length': petal_length,
         'petal_width': petal_width,
     })
+
+def api_species(req):
+    # 1. JsonResponse() // ภากร
+    # 2. serializer // 
+    # 3. json.dumps() // Nim, 
+    jsonser = serializers.get_serializer('json')
+    #species = Species.objects.all();
+    return jsonser.serialize(Species.objects.all())
