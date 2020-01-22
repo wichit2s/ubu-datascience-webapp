@@ -47,6 +47,8 @@ def api_species(req):
     # 1. JsonResponse() // ภากร
     # 2. serializer // 
     # 3. json.dumps() // Nim, 
-    jsonser = serializers.get_serializer('json')
-    #species = Species.objects.all();
-    return jsonser.serialize(Species.objects.all())
+    import json
+    species = Species.objects.all();
+    data = serializers.serialize('json', species, fields=('sid', 'name'))
+    data = json.loads(data)
+    return JsonResponse(data, safe=False)
