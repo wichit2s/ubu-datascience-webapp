@@ -1,10 +1,15 @@
 from django.shortcuts import render
 from django.core import serializers
 from django.http import JsonResponse
+from rest_framework import viewsets
 
-from .models import Species, Feature
+from .models import *
 
 # Create your views here.
+class SpeciesViewSet(viewsets.ModelViewSet):
+    queryset = Species.objects.all()
+    serializer_class = SpeciesSerializer
+
 def index(req):
     result = Species.objects.get(pk=1)
     sepal_length = 0.0

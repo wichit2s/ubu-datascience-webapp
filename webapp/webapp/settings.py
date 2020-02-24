@@ -25,7 +25,7 @@ SECRET_KEY = '_l2@%xz*-gh-)-6fmnt@l$if*7qwykae*v@z#5-6l3yd(h5v2k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ '*' ]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'myapp',
     'irisapp',
 ]

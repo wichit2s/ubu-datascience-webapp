@@ -1,4 +1,5 @@
 from django.db import models
+from rest_framework import serializers
 
 # Create your models here.
 class Species(models.Model):
@@ -7,6 +8,11 @@ class Species(models.Model):
 
     def __str__(self):
         return self.name
+
+class SpeciesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Species
+        fields = [ 'sid', 'name' ]
 
 class Feature(models.Model):
     fid = models.AutoField(primary_key=True)

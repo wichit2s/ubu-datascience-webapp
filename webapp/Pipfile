@@ -11,6 +11,8 @@ numpy = "*"
 scikit-learn = "*"
 pandas = "*"
 pyyaml = "*"
+django-extensions = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.6"
